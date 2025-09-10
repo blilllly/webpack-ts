@@ -1,6 +1,10 @@
-import { getPokemon } from "./generics/get-pokemon";
+import { Pokemon } from "./decorators/pokemon-class";
 
-getPokemon(1)
-  .then((pokemon) => console.log(pokemon.sprites.front_default))
-  .catch((error) => console.error(error))
-  .finally(() => console.log("Fin de pokemon"));
+const bulbasur = new Pokemon("Bulbasur");
+
+// (Pokemon.prototype as any).customName = "Pikachu";
+
+// bulbasur.savePokemonToDB(3);
+
+bulbasur.publicApi = "Eu";
+console.log(bulbasur);
